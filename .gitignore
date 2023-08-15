@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# Ignored files and directories for Node.js projects
+node_modules/
+npm-debug.log
+yarn-error.log
+
 # testing
 /coverage
 
