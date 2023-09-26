@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { setAccessToken } from '../auth'; // Импортируйте функции для работы с токенами
+import { Container, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './LoginPage.css';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -29,28 +32,45 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title text-center">Login Page</h2>
-              <form onSubmit={handleLogin}>
-                <div className="mb-3">
-                  <label htmlFor="username" className="form-label">Username:</label>
-                  <input type="text" className="form-control" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password:</label>
-                  <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button type="submit" className="btn btn-primary w-100">Login</button>
-              </form>
-            </div>
+    <Container className="text-center">
+      <main className="form-signin">
+        <Form onSubmit={handleLogin}>
+          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+          <Form.Floating>
+            <Form.Control
+              type="text"
+              id="floatingInput"
+              placeholder="Your login"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label htmlFor="floatingInput">Login</label>
+          </Form.Floating>
+          <Form.Floating>
+            <Form.Control
+              type="password"
+              id="floatingPassword"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label htmlFor="floatingPassword">Password</label>
+          </Form.Floating>
+
+          <div className="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me" /> Remember me
+            </label>
           </div>
-        </div>
-      </div>
-    </div>
+          <Button className="w-100 btn btn-lg btn-primary" type="submit">
+            Sign in
+          </Button>
+          <p className="mt-3">
+            Don't have an account? <Link to="/register">Sign up</Link>
+          </p>
+        </Form>
+      </main>
+    </Container>
   );
 };
 

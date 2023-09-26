@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Container, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './RegistrationPage.css';
 
 const RegistrationPage = () => {
   const [username, setUsername] = useState('');
@@ -26,28 +29,37 @@ const RegistrationPage = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h2 className="card-title text-center">Registration Page</h2>
-              <form onSubmit={handleRegistration}>
-                <div className="mb-3">
-                  <label htmlFor="username" className="form-label">Username:</label>
-                  <input type="text" className="form-control" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Password:</label>
-                  <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <button type="submit" className="btn btn-primary w-100">Register</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container className="text-center">
+      <main className="form-signup">
+        <Form onSubmit={handleRegistration}>
+          <h1 className="h3 mb-3 fw-normal">Please sign up</h1>
+          <Form.Floating>  
+            <Form.Control
+                  type="text"
+                  id="floatingInput"
+                  placeholder="Your login"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <label htmlFor="floatingInput">Login</label>
+          </Form.Floating>
+          <Form.Floating>
+              <Form.Control
+                type="password"
+                id="floatingPassword"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label htmlFor="floatingPassword">Password</label>
+          </Form.Floating>
+          <Button type="submit" className="w-100 btn btn-lg btn-primary">Sign up</Button>
+          <p className="mt-3">
+            Do you have an account? <Link to="/login">Sign in</Link>
+          </p>
+        </Form>
+      </main>
+    </Container>
   );
 };
 

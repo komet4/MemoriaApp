@@ -9,9 +9,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route exact path="/login" element={LoginPage} />
-          <Route exact path="/register" element={RegistrationPage} />
-          <Route exact path="/dashboard" element={DashboardPage} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route exact path="/register" element={<RegistrationPage />} />
+          <Route exact path="/dashboard" element={<DashboardPage />} />
           {/* Другие маршруты */}
         </Routes>
       </div>

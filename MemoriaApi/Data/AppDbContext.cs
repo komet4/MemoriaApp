@@ -3,23 +3,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MemoriaApi.Data;
 
-public class AppDbContext : DbContext
+public sealed class AppDbContext : DbContext
 {
-
     public AppDbContext(DbContextOptions options) : base(options)
     {
         Database.Migrate();
     }
     
-    public DbSet<User> Users { get; set; }
-    public DbSet<Note> Notes { get; set; }
-    public DbSet<Tag> Tags { get; set; }
-    public DbSet<NoteTag> NoteTags { get; set; }
-    public DbSet<NoteLink> NoteLinks { get; set; }
-    public DbSet<RefreshToken> RefreshTokens { get; set; }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         
     }
+    
+    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<Note> Notes { get; set; } = null!;
+    public DbSet<Tag> Tags { get; set; } = null!;
+    public DbSet<NoteTag> NoteTags { get; set; } = null!;
+    public DbSet<NoteLink> NoteLinks { get; set; } = null!;
+    public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
 }

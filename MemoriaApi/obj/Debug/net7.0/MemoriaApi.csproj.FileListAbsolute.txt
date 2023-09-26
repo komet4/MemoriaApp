@@ -45,3 +45,8 @@
 /Users/ilia/MemoriaApp/MemoriaApi/obj/Debug/net7.0/MemoriaApi.pdb
 /Users/ilia/MemoriaApp/MemoriaApi/obj/Debug/net7.0/MemoriaApi.genruntimeconfig.cache
 /Users/ilia/MemoriaApp/MemoriaApi/obj/Debug/net7.0/ref/MemoriaApi.dll
+/Users/ilia/MemoriaApp/MemoriaApi/bin/Debug/net7.0/Humanizer.dll
+/Users/ilia/MemoriaApp/MemoriaApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/ilia/MemoriaApp/MemoriaApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/ilia/MemoriaApp/MemoriaApi/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/ilia/MemoriaApp/MemoriaApi/bin/Debug/net7.0/System.CodeDom.dll
